@@ -8,20 +8,23 @@ string result;
 
 foreach (var item in temp)
 {
-    //switch (item)
-    //{
-    //    case 1:
-    //        Console.WriteLine("Jeden");
-    //        break;
-    //    default:
-    //        break;
-    //}
-    result = item switch
+    switch (item)
     {
-        < 2  => "mniej niż dwa",
+        case 1:
+            Console.WriteLine("Jeden");
+            break;
+        case 2:
+            Console.WriteLine("dwa");
+            break;
+        default:
+            break;
+    }
+    item switch
+    {
+        < 2  => () => { result = "dwa" }; , // do sprawdzenia
         >= 3 => "więcej niż dwa",
         _    => "nieznane"
     };
-    Console.WriteLine(result);
+    //Console.WriteLine(result);
 }
 
